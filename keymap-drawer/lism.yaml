@@ -30,7 +30,7 @@ layers:
   - M
   - ','
   - .
-  - /
+  - $$mdi:lock-open-variant-outline$$
   - {t: '$$mdi:backspace-reverse-outline$$', h: Device Layer}
   - {t: Mouse Layer, h: toggle}
   - {t: '$$mdi:keyboard-tab$$', h: Mouse Layer}
