@@ -22,10 +22,10 @@
 &peripheral_listener {
     status = "okay";
     input-processors = <&zip_xy_transform (INPUT_TRANSFORM_XY_SWAP | INPUT_TRANSFORM_X_INVERT) &mouse_runtime_input_processor_peripheral>;  
-    // input-processors = 
-    //         <&zip_xy_transform INPUT_TRANSFORM_Y_INVERT>,
-    //         <&mouse_runtime_input_processor>,
-    //         <&scroll_runtime_input_processor>;
+    input-processors = 
+            <&zip_xy_transform INPUT_TRANSFORM_Y_INVERT>,
+            <&mouse_runtime_input_processor>,
+            <&scroll_runtime_input_processor>;
 };
 
 // セントラルのリスナーを有効化し、deviceを紐付け
