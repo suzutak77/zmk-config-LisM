@@ -2,5 +2,5 @@
 #include <behaviors/battery_history_request.dtsi>
 
 &transform_keymap {
-    col-offset = <5>;
+    col-offset = <6>;
 };
