@@ -32,7 +32,6 @@
         };
     };
 
-/ {
     combos {
         compatible = "zmk,combos";
 
@@ -43,9 +42,6 @@
             key-positions = <17 18>; // 同時に押すキーのインデックス番号を指定
         };
     };
-
-    // 既存の macros, behaviors, keymap はそのまま...
-};
 
     behaviors {
         encoder_kp: sensor_rotate_kp {
