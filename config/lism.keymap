@@ -40,6 +40,8 @@
             timeout-ms = <50>;
             bindings = <&mo 5>;
             key-positions = <17 18>; // 同時に押すキーのインデックス番号を指定
+            slow-release;
+            require-prior-idle-ms = <130>; // 💡 暴発を防ぎつつ、スクロールへの移行をスムーズにするために少し短め
         };
     };
 
