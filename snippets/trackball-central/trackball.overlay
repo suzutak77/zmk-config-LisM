@@ -39,8 +39,10 @@
     >;
 };
 
+// レイヤー5にいる間だけスクロールに切り替わるように設定
 &scroll_runtime_input_processor {
     x-codes = <INPUT_REL_X>;
     y-codes = <INPUT_REL_Y>;
     xy-to-scroll-enabled;
+    layers = <5>; // ← レイヤー5でのみ有効にする設定
 };
