@@ -34,10 +34,7 @@
     status = "okay";
     device = <&trackball_central>;
     input-processors = <
-        &zip_xy_transform (INPUT_TRANSFORM_XY_SWAP | INPUT_TRANSFORM_Y_INVERT) 
-        &mouse_runtime_input_processor_central
-        &zip_xy_to_scroll_mapper
-    >;
+        &zip_xy_transform (INPUT_TRANSFORM_XY_SWAP | INPUT_TRANSFORM_Y_INVERT) &mouse_runtime_input_processor &scroll_runtime_input_processor>;
 };
 
 // スクロール用プロセッサの基本設定
