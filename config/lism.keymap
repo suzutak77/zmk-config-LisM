@@ -109,8 +109,6 @@
 
         scroll_layer {
             display-name = "Scroll";
-            input-processors = <&zip_xy_to_scroll_mapper>;
-
             bindings = <
 &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans
 &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans
