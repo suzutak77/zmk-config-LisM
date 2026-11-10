@@ -29,20 +29,33 @@
 };
 
 // セントラルのリスナーを有効化し、deviceを紐付け
+// 1. 通常時のマウス用リスナー（レイヤー5以外で動作）
 &central_listener {
     status = "okay";
     device = <&trackball_central>;
     input-processors = <
         &zip_xy_transform (INPUT_TRANSFORM_XY_SWAP | INPUT_TRANSFORM_Y_INVERT) 
         &mouse_runtime_input_processor_central
-        &scroll_runtime_input_processor
     >;
 };
 
-// レイヤー5にいる間だけスクロールに切り替わるように設定
+// 2. レイヤー5が有効なときだけ発動するスクロール用リスナー
+/ {
+    scroll_listener {
+        compatible = "zmk,input-listener";
+        status = "okay";
+        device = <&trackball_central>;
+        layers = <5>; // レイヤー5でのみ有効
+        input-processors = <
+            &zip_xy_transform (INPUT_TRANSFORM_XY_SWAP | INPUT_TRANSFORM_Y_INVERT)
+            &scroll_runtime_input_processor
+        >;
+    };
+};
+
+// 3. スクロールプロセッサの基本設定
 &scroll_runtime_input_processor {
     x-codes = <INPUT_REL_X>;
     y-codes = <INPUT_REL_Y>;
     xy-to-scroll-enabled;
-    layers = <5>; // ← レイヤー5でのみ有効にする設定
 };
