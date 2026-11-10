@@ -29,17 +29,21 @@
 };
 
 // セントラルのリスナーを有効化し、deviceを紐付け
-// セントラルのリスナーを設定し、スクロール用プロセッサを追加する
+// セントラルのリスナー設定
 &central_listener {
     status = "okay";
     device = <&trackball_central>;
     input-processors = <
-        &zip_xy_transform (INPUT_TRANSFORM_XY_SWAP | INPUT_TRANSFORM_Y_INVERT) &mouse_runtime_input_processor &scroll_runtime_input_processor>;
+        &zip_xy_transform (INPUT_TRANSFORM_XY_SWAP | INPUT_TRANSFORM_Y_INVERT) 
+        &mouse_runtime_input_processor_central
+        &scroll_runtime_input_processor
+    >;
 };
 
-// スクロール用プロセッサの基本設定
+// スクロール用プロセッサの設定
 &scroll_runtime_input_processor {
     x-codes = <INPUT_REL_X>;
     y-codes = <INPUT_REL_Y>;
     xy-to-scroll-enabled;
+    layers = <5>; // ← この行を追加して、レイヤー5でのみ有効にする
 };
