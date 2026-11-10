@@ -32,6 +32,21 @@
         };
     };
 
+/ {
+    combos {
+        compatible = "zmk,combos";
+
+        // 例：特定の2つのキーを同時に押したときにレイヤー5をアクティブにする
+        combo_scroll_layer {
+            timeout-ms = <50>;
+            bindings = <&mo 5>;
+            key-positions = <17 18>; // 同時に押すキーのインデックス番号を指定
+        };
+    };
+
+    // 既存の macros, behaviors, keymap はそのまま...
+};
+
     behaviors {
         encoder_kp: sensor_rotate_kp {
             compatible = "zmk,behavior-sensor-rotate-var";
@@ -96,7 +111,9 @@
             >;
         };
 
-        layer_5 {
+        lLayer 5
+        scroll_layer {
+            display-name = "Scroll";
             bindings = <
 &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans
 &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans
