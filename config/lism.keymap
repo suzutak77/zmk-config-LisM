@@ -111,7 +111,6 @@
             >;
         };
 
-        lLayer 5
         scroll_layer {
             display-name = "Scroll";
             bindings = <
@@ -120,6 +119,8 @@
 &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans
 &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans
             >;
+            // このレイヤーがアクティブな間、ポインティング移動をスクロールにする
+            trackball-bindings = <&zip_xy_to_scroll_mapper>;
         };
 
         MOUSE {
