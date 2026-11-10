@@ -35,9 +35,12 @@
     device = <&trackball_central>;
     input-processors = <
         &zip_xy_transform (INPUT_TRANSFORM_XY_SWAP | INPUT_TRANSFORM_Y_INVERT) 
-        &mouse_runtime_input_processor_central
-        &scroll_runtime_input_processor
-    >;
+        &mouse_runtime_input_processor_central>;
+    /* Layer 5 (ARROW): convert cursor movement to scroll */
+    scroller {
+        layers = <5>;
+        input-processors = <&zip_xy_to_scroll_mapper &scroll_runtime_input_processor>;
+    };
 };
 
 // スクロール用プロセッサの設定
@@ -45,5 +48,4 @@
     x-codes = <INPUT_REL_X>;
     y-codes = <INPUT_REL_Y>;
     xy-to-scroll-enabled;
-    layers = <5>; // ← この行を追加して、レイヤー5でのみ有効にする
 };
