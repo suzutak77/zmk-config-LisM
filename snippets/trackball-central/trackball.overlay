@@ -31,7 +31,7 @@
     input-processors = <
         &zip_xy_transform (INPUT_TRANSFORM_XY_SWAP | INPUT_TRANSFORM_Y_INVERT) 
         &mouse_runtime_input_processor_central
-        &scroll_runtime_input_processor &zip_scroll_scaler 1 100 &inertial_scroll
+        &scroll_runtime_input_processor
     >;
 };
 
@@ -45,7 +45,4 @@
     active-layers = <0x00000020>; /* layer5 */
     scale-multiplier = <1>;
     scale-divisor = <1>;   /* Studio UI の倍率がそのまま実効値 (1.0x基準) */
-};
-
-&mouse_runtime_input_processor {
 };
