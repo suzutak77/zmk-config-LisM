@@ -48,6 +48,15 @@
             slow-release;
             require-prior-idle-ms = <130>; // 暴発を防ぎつつ、スクロールへの移行をスムーズにするために少し短め
         };
+
+        combo_scroll_layer_p {
+            bindings = <&mo 5>;
+            key-positions = <11 12>;
+            layers = <5>;
+            slow-release;
+            timeout-ms = <50>;
+            require-prior-idle-ms = <130>;
+        };
     };
 
     behaviors {
