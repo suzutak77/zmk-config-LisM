@@ -52,15 +52,6 @@
 
     behaviors {
 
-        tp_repeat_mo1: tp_repeat_mo1 {
-            compatible = "zmk,behavior-hold-tap";
-            label = "TP_REPEAT_MO1";
-            bindings = <&mo>, <&key_repeat>;
-
-            #binding-cells = <2>;
-            tapping-term-ms = <200>;
-        };
-
         // エンコーダ用 runtime-configurable sensor rotate
         // デフォルトはスクロール (cw=SCRL_DOWN, ccw=SCRL_UP)
         // DYA Studio Web UI から レイヤーごとに cw/ccw の binding を
