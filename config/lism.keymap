@@ -4,25 +4,21 @@
 
 #define ZMK_POINTING_DEFAULT_SCRL_VAL 100
 
-#include <behaviors.dtsi>
-#include <dt-bindings/zmk/bt.h>
-#include <dt-bindings/zmk/keys.h>
-#include <dt-bindings/zmk/outputs.h>
-#include <dt-bindings/zmk/pointing.h>
 #include <dt-bindings/zmk/mouse.h>
 #include <behaviors/runtime-sensor-rotate.dtsi>
 #include <behaviors/default_layer.dtsi>
 #include <dt-bindings/zmk_behavior_default_layer/default_layer.h>
+#include <behaviors.dtsi>
+#include <dt-bindings/zmk/bt.h>
+#include <dt-bindings/zmk/keys.h>
+#include <dt-bindings/zmk/pointing.h>
 
 &mt {
     tapping-term-ms = <300>;
     flavor = "balanced";
 };
 
-&lt {
-    quick-tap-ms = <300>;
-};
-
+&lt { quick-tap-ms = <300>; };
 
 / {
     macros {
@@ -30,10 +26,13 @@
             compatible = "zmk,behavior-macro";
             label = "EMOJI";
             #binding-cells = <0>;
-            bindings = 
-                <&macro_press &kp CAPSLOCK>,
-                <&macro_tap &kp E>,
-                <&macro_release &kp CAPSLOCK>;
+            bindings =
+                <&macro_press>,
+                <&kp CAPSLOCK>,
+                <&macro_tap>,
+                <&kp E>,
+                <&macro_release>,
+                <&kp CAPSLOCK>;
         };
     };
 
@@ -41,6 +40,7 @@
         compatible = "zmk,combos";
 
         // 例：特定の2つのキーを同時に押したときにレイヤー5をアクティブにする
+
         combo_scroll_layer {
             timeout-ms = <50>;
             bindings = <&mo 5>;
@@ -51,11 +51,11 @@
     };
 
     behaviors {
-
         // エンコーダ用 runtime-configurable sensor rotate
         // デフォルトはスクロール (cw=SCRL_DOWN, ccw=SCRL_UP)
         // DYA Studio Web UI から レイヤーごとに cw/ccw の binding を
         // kp C_VOL_UP/DN や kp LEFT/RIGHT などへ動的変更可能
+
         rsr_default: rsr_default {
             compatible = "zmk,behavior-runtime-sensor-rotate";
             #sensor-binding-cells = <0>;
@@ -103,65 +103,65 @@
 
         default_layer {
             bindings = <
-&kp Q      &kp W        &kp E      &kp R    &kp T                                        &kp Y        &kp U          &kp I        &kp O              &kp P
-&kp A      &kp S        &kp D      &kp F    &kp G                                        &kp H        &kp J          &kp K        &kp L              &kp SQT
-&zfoldZ    &kp X        &kp C      &kp V    &kp B           &lt 4 COLON  &kp BACKSLASH   &kp N        &kp M          &kp COMMA    &kp DOT            &kp SLASH
-&kp LCTRL  &kp LEFT_WIN                     &lt 2 LEFT_ALT  &lt 3 SPACE  &kp BACKSPACE   &lt 1 ENTER                              &kp RIGHT_CONTROL  &kp DEL
+&kp Q    &kp W      &kp E      &kp R         &kp T             &kp Y        &kp U             &kp I        &kp O              &kp P
+&kp A    &kp S      &kp D      &kp F         &kp G             &kp H        &kp J             &kp K        &kp L              &kp MINUS
+&zfoldZ  &kp X      &kp C      &kp V         &kp B             &lt 4 COLON  &lt 6 LANGUAGE_1  &kp N        &kp M              &kp COMMA
+&kp DOT  &kp SLASH  &kp LCTRL  &kp LEFT_WIN  &lt 2 LANGUAGE_2  &lt 3 SPACE  &kp BACKSPACE     &lt 1 ENTER  &kp RIGHT_CONTROL  &kp DEL
             >;
         };
 
         layer_1 {
             bindings = <
-&trans  &trans   &trans  &trans  &trans                  &kp MINUS                   &kp KP_NUMBER_7  &kp KP_NUMBER_8  &kp KP_NUMBER_9  &kp PLUS
-&trans  &trans   &trans  &trans  &trans                  &mt LCTRL kp SLASH          &kp KP_NUMBER_4  &kp KP_NUMBER_5  &kp KP_NUMBER_6  &kp ASTERISK
-&trans  &trans   &trans  &trans  &trans  &trans  &trans  &mt LEFT_SHIFT KP_NUMBER_0  &kp KP_NUMBER_1  &kp KP_NUMBER_2  &kp KP_NUMBER_3  &kp PERIOD
-&trans  &trans                   &trans  &trans  &trans  &trans                                                        &trans           &trans
+&trans           &trans      &trans  &trans  &trans  &kp MINUS        &kp KP_NUMBER_7  &kp KP_NUMBER_8             &kp KP_NUMBER_9  &kp PLUS
+&trans           &trans      &trans  &trans  &trans  &mt LCTRL SLASH  &kp KP_NUMBER_4  &kp KP_NUMBER_5             &kp KP_NUMBER_6  &kp ASTERISK
+&trans           &trans      &trans  &trans  &trans  &trans           &trans           &mt LEFT_SHIFT KP_NUMBER_0  &kp KP_NUMBER_1  &kp KP_NUMBER_2
+&kp KP_NUMBER_3  &kp PERIOD  &trans  &trans  &trans  &trans           &trans           &trans                      &trans           &trans
             >;
         };
 
         layer_2 {
             bindings = <
-&kp MINUS                   &kp KP_NUMBER_7  &kp KP_NUMBER_8  &kp KP_NUMBER_9  &kp PLUS                            &kp CARET        &kp AMPERSAND       &kp TILDE       &kp LEFT_PARENTHESIS  &kp RIGHT_PARENTHESIS
-&kp SLASH                   &kp KP_NUMBER_4  &kp KP_NUMBER_5  &kp KP_NUMBER_6  &kp ASTERISK                        &kp EXCLAMATION  &kp AT_SIGN         &kp HASH        &kp DOLLAR            &kp PERCENT
-&mt LEFT_SHIFT KP_NUMBER_0  &kp KP_NUMBER_1  &kp KP_NUMBER_2  &kp KP_NUMBER_3  &kp PERIOD     &kp EQUAL   &trans   &kp LEFT_BRACKET  &kp RIGHT_BRACKET  &kp LEFT_BRACE  &kp RIGHT_BRACE       &kp BACKSLASH
-&trans                      &trans                                             &trans         &trans      &trans   &trans                                               &trans                &kp PIPE
+&kp MINUS                   &kp KP_NUMBER_7  &kp KP_NUMBER_8  &kp KP_NUMBER_9  &kp PLUS      &kp CARET        &kp AMPERSAND  &kp TILDE         &kp LEFT_PARENTHESIS  &kp RIGHT_PARENTHESIS
+&kp SLASH                   &kp KP_NUMBER_4  &kp KP_NUMBER_5  &kp KP_NUMBER_6  &kp ASTERISK  &kp EXCLAMATION  &kp AT_SIGN    &kp HASH          &kp DOLLAR            &kp PERCENT
+&mt LEFT_SHIFT KP_NUMBER_0  &kp KP_NUMBER_1  &kp KP_NUMBER_2  &kp KP_NUMBER_3  &kp PERIOD    &kp EQUAL        &trans         &kp LEFT_BRACKET  &kp RIGHT_BRACKET     &kp LEFT_BRACE
+&kp RIGHT_BRACE             &kp BACKSLASH    &trans           &trans           &trans        &trans           &trans         &trans            &trans                &kp PIPE
             >;
         };
 
         layer_3 {
             bindings = <
-&kp ESCAPE      &kp LC(LS(TAB))         &kp UP_ARROW    &kp LC(TAB)              &trans                    &trans  &trans  &trans  &trans  &trans
-&kp HOME        &kp LEFT_ARROW          &kp DOWN_ARROW  &kp RIGHT_ARROW          &kp END                   &trans  &trans  &trans  &trans  &trans
-&kp LEFT_SHIFT  &kp LG(LS(LEFT_ARROW))  &trans          &kp LG(LS(RIGHT_ARROW))  &trans   &trans   &trans  &trans  &trans  &trans  &trans  &trans
-&trans          &trans                                                           &trans   &trans   &trans   &trans                 &trans  &trans
+&kp ESCAPE      &kp LC(LS(TAB))         &kp UP_ARROW    &kp LC(TAB)              &trans   &trans  &trans  &trans  &trans  &trans
+&kp HOME        &kp LEFT_ARROW          &kp DOWN_ARROW  &kp RIGHT_ARROW          &kp END  &trans  &trans  &trans  &trans  &trans
+&kp LEFT_SHIFT  &kp LG(LS(LEFT_ARROW))  &trans          &kp LG(LS(RIGHT_ARROW))  &trans   &trans  &trans  &trans  &trans  &trans
+&trans          &trans                  &trans          &trans                   &trans   &trans  &trans  &trans  &trans  &trans
             >;
         };
 
         layer_4 {
             bindings = <
-&trans  &trans      &trans  &trans  &studio_unlock                         &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4
-&trans  &trans      &trans  &trans  &trans                                 &trans        &trans        &trans        &trans        &trans
-&trans  &trans      &trans  &trans  &trans          &trans   &bootloader   &trans        &trans        &trans        &trans        &bt BT_CLR
-&trans  &trans                      &trans          &trans   &trans        &trans                                    &trans        &bt BT_CLR_ALL
+&trans  &trans      &trans  &trans  &studio_unlock  &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4
+&trans  &trans      &trans  &trans  &trans          &trans        &trans        &trans        &trans        &trans
+&trans  &trans      &trans  &trans  &trans          &trans        &bootloader   &trans        &trans        &trans
+&trans  &bt BT_CLR  &trans  &trans  &trans          &trans        &trans        &trans        &trans        &bt BT_CLR_ALL
             >;
         };
 
         scroll_layer {
             display-name = "Scroll";
             bindings = <
-&trans  &trans  &trans  &trans  &trans                  &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans                  &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans                  &trans  &trans  &trans  &trans                  &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans
             >;
         };
 
         MOUSE {
             bindings = <
-&trans  &trans  &trans  &trans  &trans                    &trans  &trans    &trans    &trans    &trans
-&trans  &trans  &trans  &trans  &trans                    &mkp MB4  &mkp MB1  &mkp MB3  &mkp MB2  &mkp MB5
-&trans  &trans  &trans  &trans  &trans  &trans  &trans    &trans  &trans    &trans    &trans    &trans
-&trans  &trans                  &trans  &trans  &trans    &trans                      &trans    &trans
+&trans  &trans  &trans  &trans  &trans  &trans    &trans    &trans    &trans    &trans
+&trans  &trans  &trans  &trans  &trans  &mkp MB4  &mkp MB1  &mkp MB1  &mkp MB2  &mkp MB5
+&trans  &trans  &trans  &trans  &trans  &trans    &trans    &trans    &trans    &trans
+&trans  &trans  &trans  &trans  &trans  &trans    &trans    &trans    &trans    &trans
             >;
         };
     };
