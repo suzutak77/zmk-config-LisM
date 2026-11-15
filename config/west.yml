@@ -10,6 +10,8 @@ manifest:
       url-base: https://github.com/4mplelab
     - name: cormoran
       url-base: https://github.com/cormoran
+    - name: zettaface  # <-- Input Processor Keybind
+      url-base: https://github.com/zettafac
   projects:
     # ── ZMK 本体 ────────────────────────────────────────────────
     # DYA Studio の最新機能 (ランタイムマクロ / ランタイムコンボ) は
