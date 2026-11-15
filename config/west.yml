@@ -11,7 +11,7 @@ manifest:
     - name: cormoran
       url-base: https://github.com/cormoran
     - name: zettaface  # <-- Input Processor Keybind
-      url-base: https://github.com/zettafac
+      url-base: https://github.com/zettaface
   projects:
     # ── ZMK 本体 ────────────────────────────────────────────────
     # DYA Studio の最新機能 (ランタイムマクロ / ランタイムコンボ) は
@@ -33,6 +33,9 @@ manifest:
       revision: main
     - name: zmk-feature-charge-indicator
       remote: 4mplelab
+      revision: main
+    - name: zmk-feature-custom-settings
+      remote: cormoran
       revision: main
 
     - name: zmk-module-ble-management
