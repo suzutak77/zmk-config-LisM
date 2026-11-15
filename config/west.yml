@@ -67,9 +67,14 @@ manifest:
     - name: zmk-feature-watchdog
       remote: cormoran
       revision: 84ad14c6c3645dc40b23f45d08ab45418655f912
+    # キースイッチ (キー押下統計とチャタリング検出)
     - name: zmk-feature-kscan-diagnostics
       remote: cormoran
-      revision: 1432f7fe0cfe903cd7d3c9931ae6bd6f2e1f328e
+      revision: main
+    # キースイッチ診断のライブ表示 (kscan-diagnostics の推奨依存)
+    - name: zmk-feature-input-stream
+      remote: cormoran
+      revision: main
     - name: zmk-feature-default-layer
       remote: cormoran
       revision: 92728246f80d327709839b2dbf5cf11880ff87e1
