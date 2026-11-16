@@ -20,22 +20,22 @@ layers:
   - J
   - K
   - L
-  - SQT
-  - {t: Z, h: '$$mdi:apple-keyboard-shift$$'}
+  - '-'
+  - '&zfoldZ'
   - X
   - C
   - V
   - B
-  - {t: ':', h: '4'}
-  - \
+  - {t: '~', h: '4'}
+  - {t: LANGUAGE 1, h: MOUSE}
   - N
   - M
   - ','
   - .
   - /
-  - $$mdi:apple-keyboard-control$$
+  - {t: 'Sft+$$mdi:apple-keyboard-caps$$', h: (LCTRL)}
   - LEFT WIN
-  - {t: '$$mdi:apple-keyboard-option$$', h: '2'}
+  - {t: LANGUAGE 2, h: '2'}
   - {t: '$$mdi:keyboard-space$$', h: '3'}
   - {t: '$$mdi:backspace$$', type: backspace}
   - {t: '$$mdi:keyboard-return$$', h: '1'}
@@ -47,82 +47,82 @@ layers:
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
-  - F1
-  - F2
-  - F3
-  - F4
-  - F5
+  - Alt+KP 1
+  - KP 7
+  - KP 8
+  - KP 9
+  - Alt+KP 3
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
-  - F6
-  - F7
-  - F8
-  - F9
-  - F10
+  - {t: /, h: '$$mdi:apple-keyboard-control$$'}
+  - KP 4
+  - KP 5
+  - KP 6
+  - '-'
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
+  - LESS THAN
+  - VOLUME UP
+  - {t: KP 0, h: '$$mdi:apple-keyboard-shift$$'}
+  - KP 1
+  - KP 2
+  - KP 3
+  - PERIOD
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - F11
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
+  - GREATER THAN
+  - VOLUME DOWN
   - {type: held}
-  - {t: ▽, type: trans}
-  - F12
+  - LESS THAN
+  - GREATER THAN
   '2':
   - '-'
   - KP 7
   - KP 8
   - KP 9
   - +
-  - ^
-  - '&'
-  - '~'
-  - (
-  - )
+  - ']'
+  - \
+  - ;
+  - ''''
+  - Sft+INT1
   - /
   - KP 4
   - KP 5
   - KP 6
   - '*'
-  - '!'
-  - '@'
-  - '#'
-  - $
-  - '%'
+  - ASTRK
+  - (
+  - '&'
+  - AT
+  - /
   - {t: KP 0, h: '$$mdi:apple-keyboard-shift$$'}
   - KP 1
   - KP 2
   - KP 3
   - PERIOD
   - '='
-  - {t: ▽, type: trans}
-  - '['
-  - ']'
-  - '{'
+  - TILDE2
   - '}'
-  - \
+  - '|'
+  - ^
+  - '['
+  - INT1
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {type: held}
   - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - '|'
+  - Sft+1
+  - '%'
+  - INT3
+  - Sft+INT3
   '3':
   - $$mdi:keyboard-esc$$
   - Ctl+Sft+$$mdi:keyboard-tab$$
@@ -169,7 +169,7 @@ layers:
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
+  - $$mdi:lock-open-variant-outline$$
   - {h: '1', s: '$$mdi:bluetooth-connect$$'}
   - {h: '2', s: '$$mdi:bluetooth-connect$$'}
   - {h: '3', s: '$$mdi:bluetooth-connect$$'}
@@ -181,7 +181,7 @@ layers:
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
-  - $$mdi:lock-open-variant-outline$$
+  - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
@@ -205,7 +205,7 @@ layers:
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - BT CLR ALL
-  '5':
+  Scroll:
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
@@ -223,8 +223,8 @@ layers:
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
+  - {type: held}
+  - {type: held}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
@@ -252,6 +252,9 @@ layers:
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
+  - Ctl+C
+  - Ctl+V
+  - Ctl+X
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
@@ -259,13 +262,18 @@ layers:
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
+  - '&mkp MB4'
   - $$mdi:mouse-left-click-outline$$
-  - $$mdi:mouse-scroll-wheel$$
+  - $$mdi:mouse-left-click-outline$$
   - $$mdi:mouse-right-click-outline$$
+  - '&mkp MB5'
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {type: held}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
@@ -279,11 +287,8 @@ layers:
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
+combos:
+- p: [17, 18]
+  k: Scroll
+- p: [11, 12]
+  k: Scroll
