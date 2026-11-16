@@ -52,7 +52,6 @@
         combo_scroll_layer_p {
             bindings = <&mo 5>;
             key-positions = <11 12>;
-            layers = <5>;
             slow-release;
             timeout-ms = <50>;
             require-prior-idle-ms = <130>;
@@ -133,7 +132,7 @@
 &kp MINUS                   &kp KP_NUMBER_7  &kp KP_NUMBER_8  &kp KP_NUMBER_9  &kp PLUS      &kp RIGHT_BRACKET  &kp BACKSLASH         &kp SEMICOLON    &kp SINGLE_QUOTE  &kp LS(INT1)
 &kp SLASH                   &kp KP_NUMBER_4  &kp KP_NUMBER_5  &kp KP_NUMBER_6  &kp ASTERISK  &kp ASTRK          &kp LEFT_PARENTHESIS  &kp AMPERSAND    &kp AT            &kp SLASH
 &mt LEFT_SHIFT KP_NUMBER_0  &kp KP_NUMBER_1  &kp KP_NUMBER_2  &kp KP_NUMBER_3  &kp PERIOD    &kp EQUAL          &kp TILDE2            &kp RIGHT_BRACE  &kp PIPE          &kp CARET
-&kp LEFT_BRACKET            &kp INT1         &trans           &trans           &trans        &trans             &kp CARET             &kp PERCENT      &kp INT3          &kp RS(INT3)
+&kp LEFT_BRACKET            &kp INT1         &trans           &trans           &trans        &trans             &kp LS(NUMBER_1)      &kp PERCENT      &kp INT3          &kp RS(INT3)
             >;
         };
 
